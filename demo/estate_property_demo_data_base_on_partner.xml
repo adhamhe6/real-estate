@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="partner_1" model="res.partner">
+        <field name="name">Azure Interior</field>
+    </record>
+    <record id="partner_2" model="res.partner">
+        <field name="name">Deco Addict</field>
+    </record>
+    <record id="estate_property_offer_1" model="estate.property.offer">
+        <field name="partner_id" ref="estate.partner_1"/>
+        <field name="property_id" ref="estate.estate_property_1"/>
+        <field name="price">10000</field>
+        <field name="validity">14</field>
+    </record>
+    <record id="estate_property_offer_2" model="estate.property.offer">
+        <field name="partner_id" ref="estate.partner_1"/>
+        <field name="property_id" ref="estate.estate_property_1"/>
+        <field name="price">1500000</field>
+        <field name="validity">14</field>
+    </record>
+    <record id="estate_property_offer_3" model="estate.property.offer">
+        <field name="partner_id" ref="estate.partner_2"/>
+        <field name="property_id" ref="estate.estate_property_1"/>
+        <field name="price">1500001</field>
+        <field name="validity">14</field>
+    </record>
+<!--     <function model="estate.property.offer" name="make_accept">-->
+<!--        <value eval="[ref('estate_property_offer_3')]"/>-->
+<!--     </function>-->
+     <function model="estate.property.offer" name="make_refuse">
+        <value eval="[ref('estate_property_offer_1'),ref('estate_property_offer_2')]"/>
+     </function>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="estate_property_3" model="estate.property">
+        <field name="name">Custom estate demo</field>
+        <field name="state">new</field>
+        <field name="description">Import from demo data</field>
+        <field name="expected_price">100000</field>
+        <field name="bedrooms">1</field>
+        <field name="living_area">10</field>
+        <field name="facades">4</field>
+        <field name="garage">False</field>
+        <field name="offer_ids" eval="[(4,ref('estate_property_offer_2'))]"/>
+    </record>
+</odoo>
